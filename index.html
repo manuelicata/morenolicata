@@ -10,9 +10,55 @@
 <style>
 body {font-family: "Lato", sans-serif}
 .mySlides {display: none}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
 </style>
 </head>
 <body>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Torna sopra</button>
+
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
 
 <!-- Navbar -->
 <div class="w3-top">
@@ -43,22 +89,22 @@ body {font-family: "Lato", sans-serif}
   <!-- pag1 -->
   <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:1600px" id="first">
     <b><p style="font-size: 38px;">Esperienze PCTO Licata Moreno</p></b>
-    <p class="w3-opacity"><i>5ª D Anno scolastico 2021/2022</i></p>
+    <p class="w3-opacity"><i style="font-size: 20px;" >5ª D Anno scolastico 2021/2022</i></p>
     <div class="w3-row w3-padding-25">
       <div class="w3-quarter w3-hover-opacity">
-        <a href="#second"><p>FAB LAB</p>
+        <a href="#second" style="text-decoration: none;"><p>FAB LAB</p>
         <img src="img/fab.png" class="w3-round w3-margin-bottom w3-hover-opacity" alt="Random Name" style="width:40%"></a>
       </div>
       <div class="w3-quarter w3-hover-opacity">
-        <a href="#third"><p>Progetto Margini</p>
+        <a href="#third"  style="text-decoration: none;"><p>Progetto Margini</p>
         <img src="img/teatro.png" class="w3-round w3-margin-bottom w3-hover-opacity" alt="Random Name" style="width:50%"></a>
       </div>
       <div class="w3-quarter w3-hover-opacity">
-        <a href="#fourth"><p>Unicredit: Startup Your Life</p>
+        <a href="#fourth"  style="text-decoration: none;"><p>Unicredit: Startup Your Life</p>
         <img src="img/startup.png" class="w3-round w3-margin-bottom w3-hover-opacity" alt="Random Name" style="width:100%"></a>
       </div>
       <div class="w3-quarter w3-hover-opacity">
-        <a href="#fifth"><p>Comitato studentesco</p>
+        <a href="#fifth"  style="text-decoration: none;"><p>Comitato studentesco</p>
         <img src="img/logo.jpeg" class="w3-round w3-margin-bottom w3-hover-opacity" alt="Random Name" style="width:49%"></a>
       </div>
     </div>
@@ -122,7 +168,6 @@ body {font-family: "Lato", sans-serif}
   <div style="background-color:#6c757d;">
   <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="fifth">
     <b><p style="font-size: 38px;">COMITATO STUDENTESCO <br>2021/2022</p></b>
-    <p class="w3-justify">TEST</p>
     <div class="w3-row w3-padding-32 w3-center">
       <div class="w3-half">
         <img src="img/comitato1.jpeg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:100%">
@@ -130,6 +175,15 @@ body {font-family: "Lato", sans-serif}
       <div class="w3-half">
         <img src="img/comitato3.jpg" class="w3-round w3-margin-left w3-margin-bottom" alt="Random Name" style="width:100%">
       </div>
+    </div>
+    <p class="w3-justify">Durante il corso del 5º anno ho deciso di prendere parte al “Comitato studentesco” del nostro liceo,
+       è un’esperienza di cui vado molto fiero e che mi ha formato molto, specialmente nell’ambito organizzativo e decisionale.
+Ho conosciuto molti ragazzi che hanno reso questo percorso magnifico, porterò con me tantissimi ricordi di questa esperienza unica,
+ nonostante le avversità che abbiamo incontrato, grazie alla nostra forza di volontà, siamo riusciti a riproporre le pluri-decennali
+ tradizioni del nostro liceo, ovvero: la rappresentazione teatrale del musical “Cenerentola” presso il Teatro Rivoli e la serata danzante all’Area 14.
+Soddisfazioni immense che hanno ripagato tutti gli sforzi compiuti e il tempo impiegato.</p>
+    <div class="w3-row w3-padding-32 w3-center">
+
       <div class="w3-center">
         <img src="img/comitato2.jpeg" class="w3-round w3-margin-top" alt="Random Name" style="width:100%">
       </div>
@@ -167,15 +221,14 @@ body {font-family: "Lato", sans-serif}
   </div>
 </div>
 
-  <div style="background-image: url('img/contatti.jpg')">
+  <div style="background-image: url('img/contatti-3.jpg')" >
   <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
     <b class="w3-center"><p style="font-size: 38px;">CONTATTI</p></b>
-    <p class="w3-opacity w3-center"><i>Hai bisogno di maggiori informazioni? Scrivimi!</i></p>
     <div class="w3-row w3-padding-32">
       <div class="w3-col m6 w3-large w3-margin-bottom">
-        <i class="fa fa-map-marker" style="width:30px"></i>Campobello di Mazara, TP<br>
+        <b style="font-size: 20px;"><i class="fa fa-map-marker" style="width:30px"></i>Campobello di Mazara, TP<br>
         <i class="fa fa-phone" style="width:30px"></i>Cellulare: +39 3755525597<br>
-        <i class="fa fa-envelope" style="width:30px"> </i>Email: morenolicata@gmail.com<br>
+        <i class="fa fa-envelope" style="width:30px"> </i>Email: morenolicata@gmail.com<br></b>
       </div>
       <div class="w3-col m6">
         <form action="https://formspree.io/f/xwkyjwyk" method="POST">
@@ -190,7 +243,7 @@ body {font-family: "Lato", sans-serif}
       </div>
     </div>
   </div>
-  <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+  <footer class="w3-container w3-padding-64 w3-center w3-light-grey w3-xlarge">
     <a href="https://www.facebook.com/moreno.licata"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
     <a href="https://www.instagram.com/moreno.licata"><i class="fa fa-instagram w3-hover-opacity"></i></a>
     <p style="font-size: 15px;">Copyright © 2022 All Rights Reserved By Licata Moreno</p>
